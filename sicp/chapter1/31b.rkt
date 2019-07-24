@@ -2,11 +2,11 @@
 (require rackunit)
 
 (define (product f b)
-  (define (iter acc a)
+  (define (iter a)
     (if (> a b)
-        acc
-        (iter (* (f a) acc) (+ a 1))))
-  (iter 1 1))
+        1
+        (* (f a) (iter (+ a 1)))))
+  (iter 1))
 
 (define (factorial x) (product identity x))
 (define (approxPi x)
