@@ -16,8 +16,8 @@
   
   (if (> a b)
       (if (< b c)
-          (+ (sq a) (sq b))
-          (+ (sq a) (sq c)))
+          (+ (sq a) (sq c))
+          (+ (sq a) (sq b)))
       (if (> a c)
           (+ (sq b) (sq a))
           (+ (sq b) (sq c)))))
