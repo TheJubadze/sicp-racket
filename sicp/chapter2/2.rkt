@@ -1,0 +1,36 @@
+#lang racket
+(define (make-rect side1 side2) (cons side1 side2))
+(define (side1 r) (car r))
+(define (side2 r) (cdr r))
+(define (perimeter rect) (* 2 (+ (length (side1 r)) (length (side2 r)))))
+
+(define (make-segment a b) (cons a b))
+(define (start-segment s) (car s))
+(define (end-segment s) (cdr s))
+(define (length s)
+  (define a (start-segment s))
+  (define b (end-segment s))
+  (define x1 (x-point a))
+  (define y1 (y-point a))
+  (define x2 (x-point b))
+  (define y2 (y-point b))
+  (let (
+        (x (- x1 x2))
+        (y (- y1 y2)))
+    (sqrt (+ (* x x) (* y y)))
+    )
+  )
+
+(define (make-point x y) (cons x y))
+(define (x-point a) (car a))
+(define (y-point a) (cdr a))
+
+
+(define p1 (make-point 0 0))
+(define p2 (make-point 0 10))
+(define p3 (make-point 10 0))
+(define p4 (make-point 10 10))
+(define s1 (make-segment p1 p2))
+(define s2 (make-segment p3 p4))
+(define r (make-rect s1 s2))
+(perimeter r)
