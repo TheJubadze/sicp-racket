@@ -454,4 +454,16 @@ bower_components
 ### WebSharper ###
 Scripts/
 
+# DrRacket autosave files
+*~
+\#*
+.\#*
+
+# OS X specific directory information
+.DS_Store
+
+# Compiled racket bytecode
+compiled\
+
+# Just mine :)
 **/*.bak
