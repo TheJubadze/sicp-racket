@@ -2,8 +2,8 @@
 
 let cons a b = fun msg -> 
     match msg with
-    | "CAR" -> a
+    | 1 -> a
     | _ -> b
 
-let car p = p "CAR"
-let cdr p = p "CDR"
+let car p = p 1
+let cdr p = p 0
